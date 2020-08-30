@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Appointment</title>
+	<link rel="stylesheet" href="{% static 'app.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="{% static 'scripts.js' %}"></script>
+</head>
+<body>
+ <div class="p1">
+    <div class="pal">
+        <img src="{% static 'l2.jpeg' %}">
+    
+  </div>
+  <div class="lavi">
+        <h3>Prescripto</h3>
+    
+  </div>
+<ul>
+    <li><a href="{% url 'index' %}" class="line"><h3>Home</h3></a></li>
+    <li><a href="{% url 'appointlist' %}" class="line"><h3>Appointments</h3></a></li>
+    <li><a href="{% url 'about' %}" class="line"><h3>about</h3></a></li>
+    {% if user.is_authenticated %}
+    <li style="font-size: 20px;"><b><a href="#0">Hello, {{user.first_name}}</a></b></li>
+    <li style="font-size: 20px;"><b><a href="{% url 'logout' %}">Logout</a></b></li>
+    {% endif %}
+</ul>
+  </div>
+   
+   <div class="wrapper">
+  <h2>Appointment</h2>
+  <div id="error_message"></div>
+  <form action="" method="POST" id="myform" onsubmit="return validate();">
+    {% csrf_token %}
+    <div class="input_field">
+   <label ><b> Doctor preference</b></label><br>
+   <input list="docs" name="dname">
+    <datalist id="docs">
+      {% for d in doctors %}
+    <option value="{{d.first_name}}">{{d.first_name}}</option>
+      {% endfor %}
+    </datalist>
+  </div>
+    <div class="input_field">
+       <label ><b>Date</b></label>
+        <input type="date" placeholder="Select Date" name="date">
+    </div>
+     <div class="input_field">
+       <label ><b>Time From</b></label>
+        <input type="time" placeholder=" Choose Starting Time" name="stime">
+    </div>
+    <div class="input_field">
+       <label ><b>Time To</b></label>
+        <input type="time" placeholder="choose Ending Time" name="etime">
+    </div>
+    <div class="input_field">
+      <label><b>Description</b></label>
+      <textarea placeholder="Description" name="descr"></textarea>
+  </div>
+    <div class="btn">
+        <input type="submit">
+    </div>
+  </form>
+  </div> 
+<footer>
+<div class="con">
+<center>
+<h4>Created By Gryffindor</h4>
+<h4>Copyright &copy;2020</h4>
+</div>
+</footer>   
+
+
+</body>
+</html>

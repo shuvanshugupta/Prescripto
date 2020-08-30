@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Registration</title>
+	<link rel="stylesheet" href="{% static 're.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="{% static 'scripts.js' %}"></script>
+</head>
+<body>
+<div class="p1">
+    <div class="pal">
+        <img src="{% static 'l2.jpeg' %}">
+    
+  </div>
+  <div class="lavi">
+        <h3>Prescripto</h3>
+    
+  </div>
+<ul>
+    <li><a href="{% url 'index' %}" class="line"><h3>Home</h3></a></li>
+    <li><a href="{% url 'appointlist' %}" class="line"><h3>Appointments</h3></a></li>
+    <li><a href="{% url 'about' %}" class="line"><h3>about</h3></a></li>
+</ul>
+  </div>
+   
+   <div class="wrapper">
+  <h2>Registration</h2>
+  <div id="error_message"></div>
+  <form id="myform" onsubmit="return validate();" method="POST" action="register">
+      {% csrf_token %}
+     <div class="input_field">
+        <input type="text" placeholder="First Name" name="first_name">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Last Name" name="last_name">
+    </div>
+    <select type="option" name="doctor">
+    <option value="1">Doctor</option>
+    <option value="0">Patient</option>
+    </select>
+    <div class="input_field">
+        <input type="text" placeholder="Phone" name="contact">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Email" name="email">
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Username" name="username">
+    </div>
+     <div class="input_field">
+        <input type="password" placeholder="Password" name="password1">
+    </div>
+  
+    <div class="input_field">
+        <input type="password" placeholder="Confirm Password" name="password2">
+    </div>
+    
+    <div class="input_field">
+        <textarea placeholder="Description" name="descr"></textarea>
+    </div>
+    <div class="btn">
+        <input type="submit">
+    </div>
+  </form>
+  <p>If Already Register, <a href="{% url 'login' %}">Login</a></p>
+  </div> 
+<footer>
+<div class="con">
+<center>
+<h4>Created By Gryffindor</h4>
+<h4>Copyright &copy;2020</h4>
+</div>
+</footer>
+    
+
+
+</body>
+</html>

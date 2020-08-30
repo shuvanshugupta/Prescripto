@@ -1,0 +1,216 @@
+{% load static %}
+<html>
+<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'index.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="p1">
+    <div class="pal">
+        <img src="{% static 'l2.jpeg' %}">
+    
+  </div>
+  <div class="lavi">
+        <h3>Prescripto</h3>
+    
+  </div>
+<ul>
+    <li><a href="{% url 'index' %}" class="line"><h3>Home</h3></a></li>
+    <li><a href="{% url 'appointlist' %}" class="line"><h3>Appointments</h3></a></li>
+    <li><a href="{% url 'about' %}" class="line"><h3>about</h3></a></li>
+    {% if user.is_authenticated %}
+    <li><b><a href="#0">Hello, {{user.first_name}}</a></b></li>
+    <li><b><a href="{% url 'logout' %}">Logout</a></b></li>
+    {% endif %}
+</ul>
+	</div>
+<div class="slide">
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="{% static 's1.jpg' %}" style="width:100%">
+  <div class="text">Check</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="{% static 's2.jpg' %}" style="width:100%">
+  <div class="text">Hope</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="{% static 's3.jpg' %}" style="width:100%">
+  <div class="text">Recover</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+</div>
+<div class="vi">
+  <h1>Our Vision</h1>
+ <h3>YOUR HOME FOR HEALTH</h3> 
+ <p>A world where trusted information transforms health and healthcare by connecting people, systems, and ideas.
+We aim to provide accessible, available & affordable online healthcare services to anyone, anytime & anywhere...Empowering people to impact health is our mission</p>
+<h2>SAVING LIVES ONE HEART AT A TIME</h2>
+  </div>
+<div class="san"> 
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>2017</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2016</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2015</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2012</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2011</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2007</h2>
+      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="team">
+<div class="card">
+  
+  <h1>Dr.Shuvanshu Gupta</h1>
+  <p class="title"> Allergist</p>
+  <p>Consultant fees-199Rs</p>
+  <div  style="margin: 24px 0;">
+   <i class="fa fa-instagram"></i>   
+    <i class="fa fa-linkedin"></i>  
+    <i class="fa fa-facebook"></i> 
+  </div>
+  <p><button><a href="{% url 'appoint' %}">Take Appointment</a></button></p>
+</div>
+<div class="card">
+  <h1>Dr.Somya Pratap Singh</h1>
+  <p class="title"> Dentist</p>
+  <p>Consultant fees-249Rs</p>
+  <div style="margin: 24px 0;">
+    <i class="fa fa-instagram"></i> 
+    <i class="fa fa-linkedin"></i>  
+    <i class="fa fa-facebook"></i> 
+  </div>
+  <p><button><a href="{% url 'appoint' %}">Take Appointment</a></button></p>
+</div>
+<div class="card">
+
+  <h1>Dr.Sanjay Singh</h1>
+  <p class="title">Cardiologist</p>
+  <p>Consultant fees-299Rs</p>
+  <div style="margin: 24px 0;">
+    <i class="fa fa-instagram"></i></a> 
+    <i class="fa fa-linkedin"></i></a>  
+    <i class="fa fa-facebook"></i></a>
+  </div>
+  <p><button><a href="{% url 'appoint' %}">Take Appointment</a></button></p>
+</div>
+<div class="card">
+  <h1>Dr.Deependra Kumar</h1>
+  <p class="title">Immunologist</p>
+  <p>Consultant fees-199Rs</p>
+  <div style="margin: 24px 0;">
+  <i class="fa fa-instagram"></i></a>   
+  <i class="fa fa-linkedin"></i></a>  
+  <i class="fa fa-facebook"></i></a> 
+  </div>
+  <p><button><a href="{% url 'appoint' %}">Take Appointment</a></button></p>
+</div>
+<div class="card">
+  <h1>Dr.Aman Singh</h1>
+  <p class="title">Physiologist</p>
+  <p>Consultant fees-199Rs</p>
+  <div  style="margin: 24px 0;">
+   <i class="fa fa-instagram"></i>   
+    <i class="fa fa-linkedin"></i>  
+    <i class="fa fa-facebook"></i> 
+  </div>
+  <p><button><a href="{% url 'appoint' %}">Take Appointment</a></button></p>
+</div>
+<div class="card">
+  <h1>Dr.Kabir Singh</h1>
+  <p class="title">  Dermatologist</p>
+  <p>Consultant fees-249Rs</p>
+  <div  style="margin: 24px 0;">
+   <i class="fa fa-instagram"></i>   
+    <i class="fa fa-linkedin"></i>  
+    <i class="fa fa-facebook"></i> 
+  </div>
+  <p><button><a href="{% url 'appoint' %}">Take Appointment</a></button></p>
+</div>
+</div>
+<footer>
+<div class="con">
+<center>
+<h4>Created By Gryffindor</h4>
+<h4>Copyright &copy;2020</h4>
+</div>
+</footer> 
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>   
+</body>
+</html>

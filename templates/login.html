@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Login</title>
+	<link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="{% static 'scripts.js' %}"></script>
+</head>
+<body>
+<div class="p1">
+    <div class="pal">
+        <img src="{% static 'l2.jpeg' %}">
+    
+  </div>
+  <div class="lavi">
+        <h3>Prescripto</h3>
+    
+  </div>
+<ul>
+    <li ><a href="{% url 'index' %}" class="line"><h3>Home</h3></a></li>
+    <li><a href="{% url 'appointlist' %}" class="line"><h3>Appointments</h3></a></li>
+    <li ><a href="{% url 'about' %}" class="line"><h3>about</h3></a></li>
+    {% if user.is_authenticated %}
+        <li style="float: right;"><a href="logout"><h3>Logout</h3></a></li>
+        <li style="float: right; margin-right:0px;"><a href="#0"><h3>Hello, {{user.first_name}}</h3></a></li>
+    {% endif %}
+</ul>
+  </div>
+   
+   <div class="wrapper">
+  <h2>Login</h2>
+  <div id="error_message"></div>
+  <form id="myform" onsubmit="return validate();" method="POST" action="login">
+   {% csrf_token %}
+    <div class="input_field">
+        <input type="text" placeholder="Userame" name="username">
+    </div>
+     <div class="input_field">
+        <input type="password" placeholder="Password" name="password">
+    </div>
+
+    <div class="btn">
+        <input type="submit">
+    </div>
+  </form>
+  <p>Not Registered yet, <a href="{% url 'register' %}">Register</a></p>
+</div> 
+<footer>
+<div class="con">
+<center>
+<h4>Created By Gryffindor</h4>
+<h4>Copyright &copy;2020</h4>
+</div>
+</footer>    
+
+
+</body>
+</html>

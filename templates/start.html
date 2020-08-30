@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+		<title>Welcome</title>
+		<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'start.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="logo">
+    <img src="{% static 'l2.jpeg' %}">
+    <div>
+ <div class="d1">
+  <h2>Welcome to Prescripto</h2>
+  <a href="{% url 'register' %}">Register As A Doctor</a>
+  <a href="{% url 'register' %}">Register As A Patient</a>
+  <h3>If Already Registered</h3>
+  <h4><a href="{% url 'login' %}">Login</a></h4>
+ </div>
+</body>
+</html>

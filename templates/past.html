@@ -1,0 +1,58 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Past</title>
+	<link rel="stylesheet" href="{% static 'Past.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+</head>
+<body>
+<div class="p1">
+    <div class="pal">
+        <img src="{% static 'l2.jpeg' %}">
+    
+  </div>
+  <div class="lavi">
+        <h3>Prescripto</h3>
+    
+  </div>
+<ul>
+    <li><a href="{% url 'index' %}" class="line"><h3>Home</h3></a></li>
+    <li><a href="{% url 'appoint' %}" class="line"><h3>Appointments</h3></a></li>
+    <li><a href="{% url 'about' %}" class="line"><h3>about</h3></a></li>
+    {% if user.is_authenticated %}
+    <li><b><a href="#0">Hello, {{user.first_name}}</a></b></li>
+    <li><b><a href="{% url 'logout' %}">Logout</a></b></li>
+    {% endif %}
+</ul>
+  </div>
+   
+   <table id="pas">
+  <tr>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Problem</th>
+  </tr>
+  {% for a in appoints %}
+  <tr>
+    <td>{{a.date}}</td>
+    <td>{{a.stime}}</td>
+    <td>{{a.etime}}</td>
+    <td>{{a.content}}</td>
+  </tr>
+  {% endfor %}
+</table>
+<footer>
+<div class="con">
+<center>
+<h4>Created By Gryffindor</h4>
+<h4>Copyright &copy;2020</h4>
+</div>
+</footer>    
+
+
+</body>
+</html>
